@@ -6,7 +6,20 @@
         xmlns:local="clr-namespace:SheetCatalog"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+	<Grid>
+		<Menu x:Name="menu" Height="25" VerticalAlignment="Top" HorizontalContentAlignment="Stretch">
+			<MenuItem Header="Program">
+				<MenuItem Header="Close" HorizontalAlignment="Left" Width="145"/>
+			</MenuItem>
+			<MenuItem Header="Pieces">
+				<MenuItem Header="Add new" HorizontalAlignment="Left" Width="145" Click="MenuItem_Click"/>
+			</MenuItem>
+		</Menu>
+		<DataGrid x:Name="dataGrid" Margin="0,25,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" ItemsSource="{Binding Pieces}">
+			<DataGrid.DataContext>
+				<local:SheetCatalogDataSet/>
+			</DataGrid.DataContext>
+		</DataGrid>
+
+	</Grid>
 </Window>
